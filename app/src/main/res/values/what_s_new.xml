@@ -4,11 +4,8 @@
     <string name="what_s_new_latest" translatable="false">
         <b>What\'s new</b>
         <font color='grey'>
-            \n🌟 <b>UI Enhancements</b>: Redesigned Shortcut components with gradient borders and native SVG support.
-            \n🌟 <b>Nearby Share Fix</b>: Resolved target component issues for more reliable sharing.
-            \n🌟 <b>System Requirements</b>: Minimum requirement updated to Android 10 (API 29) for improved security and performance.
-            \n🌟 <b>Biometrics</b>: Streamlined authentication flow for modern Android versions.
-            \n🌟 <b>Under the Hood</b>: Major dependency updates including Java 17, Gradle 9, and Compose optimizations.
+            \n🌟 <b>Theme Switching</b>: Seamless transition between light and dark modes without restarting the app or resetting lock timers.
+            \n🌟 <b>Language Consistency</b>: Ensured the app name displays consistently across all device language settings.
         </font>
     </string>
 </resources>

@@ -1,5 +1,3 @@
-- <b>UI Enhancements</b>: Redesigned Shortcut components with gradient borders and native SVG support.
-- <b>Nearby Share Fix</b>: Resolved target component issues for more reliable sharing.
-- <b>System Requirements</b>: Minimum requirement updated to Android 10 (API 29) for improved security and performance.
-- <b>Biometrics</b>: Streamlined authentication flow for modern Android versions.
-- <b>Under the Hood</b>: Major dependency updates including Java 17, Gradle 9, and Compose optimizations.
+• Seamless theme switching between light and dark modes without app restarts.
+• Fixed app lock resets during system theme changes for an uninterrupted experience.
+• Improved stability, performance gains, and general bug fixes.
