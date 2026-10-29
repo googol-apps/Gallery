@@ -57,7 +57,7 @@
         <!--MainActivity-->
         <activity
             android:name=".MainActivity"
-            android:configChanges="orientation|screenSize|screenLayout"
+            android:configChanges="orientation|screenSize|screenLayout|uiMode"
             android:exported="true"
             android:launchMode="singleTask">
             <!--Intent Filters -->
