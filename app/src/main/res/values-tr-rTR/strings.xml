@@ -15,7 +15,6 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
-    <string name="app_name">Galeri</string>
     <string name="permission_scr_title">Depolama İzni</string>
     <string name="allow">İzin Ver</string>
     <string name="permission_scr_desc"><b>Galeri</b> uygulamasının, resim ve videoları görüntüleyebilmesi için cihazınızın depolama alanına erişim izni gereklidir.

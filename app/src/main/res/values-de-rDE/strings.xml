@@ -15,7 +15,6 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
-    <string name="app_name">Galerie</string>
     <string name="permission_scr_title">Speicherberechtigung</string>
     <string name="allow">Zulassen</string>
     <string name="permission_scr_desc"><b>Galerie</b> benötigt die Berechtigung, auf den Speicher Ihres Gerätes zuzugreifen, um Bilder und Videos anzuzeigen.

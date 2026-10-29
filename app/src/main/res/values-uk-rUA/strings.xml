@@ -15,7 +15,6 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
-    <string name="app_name">Галерея</string>
     <string name="permission_scr_title">Доступ до сховища</string>
     <string name="allow">Дозволити</string>
     <string name="permission_scr_desc"><b>Галерея</b> вимагає дозволу на доступ до сховища вашого 

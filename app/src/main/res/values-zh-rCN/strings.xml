@@ -15,7 +15,6 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
-    <string name="app_name">图库</string>
     <string name="permission_scr_title">存储权限</string>
     <string name="allow">允许</string>
     <string name="permission_scr_desc"><b>图库</b>需要权限访问您的  
