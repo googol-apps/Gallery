@@ -22,8 +22,8 @@ plugins {
 //  Defines the core identity and compatibility parameters of the application.
 //  This lambda is applied to the [defaultConfig] block within the [android] section.
 private val config: Config.() -> Unit = {
-    versionCode = 84                                    // Internal version code
-    versionName = "1.0.10"                               // User-facing version name
+    versionCode = 85                                    // Internal version code
+    versionName = "1.0.11"                               // User-facing version name
     applicationId = "com.googol.android.apps.photos" // Unique app ID
     minSdk = 29                                         // Minimum supported Android version
     targetSdk = 37                                      // Target SDK
@@ -70,13 +70,14 @@ composeCompiler {
 // -----------------------------------------------------------------------------
 android {
     namespace = "com.zs.gallery"
-    compileSdk { version = release(37) }
     buildFeatures { compose = true }
     defaultConfig(config)
+    compileSdk { version = release(37){  minorApiLevel = 2} }
     packaging {
         resources { excludes += "/META-INF/{AL2.0,LGPL2.1}" }  // Exclude redundant license files
         jniLibs.keepDebugSymbols.add("**/*.so")
     }
+
 
     // -----------------------------
     // Java Compatibility Options
