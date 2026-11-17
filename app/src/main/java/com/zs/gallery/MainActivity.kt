@@ -124,6 +124,7 @@ private val PROMO_SKIP_LAUNCHES = 30
 private val STANDARD_REVIEW_DELAY = 5.days
 private val KEY_LAST_REVIEW_TIME = longPreferenceKey(TAG + "_last_review_time", 0)
 private val KEY_APP_VERSION_CODE = intPreferenceKey(TAG + "_app_version_code", -1)
+private const val KEY_BG_TIME = "timeAppWentToBackground"
 
 @Composable
 private inline fun <S, O> Preferences.observeAsState(key: Key<S, O>): State<O?> {
@@ -535,12 +536,14 @@ class MainActivity : ComponentActivity(), SystemFacade, NavDestListener {
         }
     }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onCreate(bundle: Bundle?) {
+        super.onCreate(bundle)
+        timeAppWentToBackground =
+            bundle?.getLong(KEY_BG_TIME, -1L) ?: -1L
         Log.d(TAG, "onCreate")
         // This is determined by checking if savedInstanceState is null.
         // If null, it's a cold start (first time launch or activity recreated from scratch)
-        val isColdStart = savedInstanceState == null
+        val isColdStart = bundle == null
         // Configure the splash screen for the app
         configSplashScreen()
         // Initialize
@@ -637,5 +640,10 @@ class MainActivity : ComponentActivity(), SystemFacade, NavDestListener {
                 }
             }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putLong(KEY_BG_TIME, timeAppWentToBackground)
     }
 }
