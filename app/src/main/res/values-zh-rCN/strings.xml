@@ -66,7 +66,6 @@
     <string name="use_as">设置为</string>
     <string name="set_as_wallpaper">设为壁纸</string>
     <string name="like">赞</string>
-    <string name="unlike">取消收藏</string>
     <string name="details">详情</string>
     <string name="title">标题</string>
     <string name="path">连接</string>
@@ -133,7 +132,8 @@
 <font color="grey" size="14">
     \n点击此处查看隐私政策。
 </font>
-    </string>
+    
+</string>
     <string name="pref_live_gallery"><b>实时图库</b>
            <font color="grey" size="14">
                \n在图库中启用动画和视频自动播放。
@@ -143,7 +143,8 @@
     <string name="pref_transparent_system_bars"><b>系统栏</b>
 <font color="grey" size="14">
     \n启用透明系统栏，实现无边框体验 <b><i>\n（Android 6.0 及以上）</i></b>
-</font></string>
+</font>
+</string>
     <string name="pref_report_an_issue"><b>报告一个问题</b>
         <font color="grey" size="14">
            \n与我们的支持团队取得联系以获得帮助或报告问题
@@ -167,7 +168,8 @@
               \n使用生物识别进行图库安全保护。
         </font>    </string>
     <string name="pref_color_nav_bar"><b>导航栏颜色</b><font color="grey" size="14">\n在导航栏使用强调色。
-</font></string>
+</font>
+</string>
     <string name="about_us">关于我们</string>
     <string name="postfix_x_f">%1$.1fx</string>
     <string name="system">系统</string>
@@ -200,6 +202,7 @@
     <string name="msg_files_quick_share_error">安装快速共享应用来使用此功能。</string>
     <string name="none">无</string>
     <string name="properties">详情</string>
-    <string name="pref_ambient_mode"><b>环境模式</b><font color="grey">\n为媒体查看器添加沉浸式灯光效果，带来更具电影感的体验。</font></string>
+    <string name="pref_ambient_mode"><b>环境模式</b><font color="grey">\n为媒体查看器添加沉浸式灯光效果，带来更具电影感的体验。</font>
+</string>
     <string name="authenticate">验证</string>
 </resources>

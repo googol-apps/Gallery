@@ -15,6 +15,107 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
+    <string name="permission_scr_title">Autorizzazioni di archiviazione</string>
+    <string name="allow">Consenti</string>
+    <string name="permission_scr_desc"><b>Galleria</b> necessita dell\'autorizzazione ad accedere
+        alla memoria interna per visualizzare immagini e video.
+        <b>\n\nSu Android 14 or superiore:</b>
+        <font color="grey">
+            \n  1. Seleziona <b>Consenti tutto</b> nella finestra di dialogo per far funzionare l\'app correttamente.
+        </font>
+    </string>
+    <string name="photos">Foto</string>
+    <string name="settings">Impostazioni</string>
+    <string name="folders">Cartelle</string>
+    <string name="loading">Caricamento</string>
+    <string name="oops_empty">Oops, è vuoto!!</string>
     <!--E.g., Facebook \n 306 Files - 24.42MB-->
+    <string name="folders_scr_folder_name_sds">%1$d File - %2$s</string>
+    <string name="size">Dimensione</string>
+    <string name="name">Nome</string>
+    <string name="recent">Recente</string>
+    <string name="dark">Scuro</string>
+    <string name="light">Chiaro</string>
+    <string name="sync_with_system">Sincronizza con il dispositivo</string>
+    <string name="general">Generale</string>
+    <string name="appearance">Aspetto</string>
+    <string name="feedback">Feedback</string>
+    <string name="about_gallery">Informazioni su Galleria</string>
+    <string name="msg_unknown_error">Qualcosa è andato storto. Si è verificato un errore sconosciuto.</string>
+    <string name="report">Segnala</string>
+    <string name="files_source_folder_title_s">123%1$s</string>
+    <string name="files_selected_d">%1$d selezionato</string>
+    <string name="select_all">Seleziona tutto</string>
+    <string name="bin">Cestino</string>
+    <string name="recycle_bin">Cestino</string>
+    <string name="favourites">Preferiti</string>
     <!--returns a string with multiplied x e.g., 1.3x-->
+    <string name="times_factor_x_f">%1$sx</string>
+    <string name="last_modified">Ultima modifica</string>
+    <string name="msg_error_sharing_files">Oops, qualcosa è andato storto durante la condivisione dei file, riprova.</string>
+    <string name="msg_files_delete_unknown_error">Oops, qualcosa è andato storto durante l\'eliminazione dei file, riprova.</string>
+    <string name="msg_files_trash_unknown_error">Oops, qualcosa è andato storto durante l\'eliminazione dei file, riprova.</string>
+    <string name="msg_files_restore_unknown_error">Oops, qualcosa è andato storto durante il ripristino dei file, riprova.</string>
+    <string name="share">Condividi</string>
+    <string name="edit">Modifica</string>
+    <string name="delete">Elimina</string>
+    <string name="info">Info</string>
+    <string name="edit_in">Modifica Con</string>
+    <string name="use_as">Usa come</string>
+    <string name="set_as_wallpaper">Imposta come sfondo</string>
+    <string name="like">Mi Piace</string>
+    <string name="details">Dettagli</string>
+    <string name="title">Titolo</string>
+    <string name="path">Percorso</string>
+    <string name="metadata">Metadata</string>
+    <string name="msg_files_confirm_deletion"><b>Elimina</b>
+        <font color="grey">\nSei sicuro di volerlo eliminare? Nonnsarà possibile ripristinarlo
+        </font>
+    </string>
+    <string name="msg_update_check_error">Oops, qualcosa è andato storto durante il controllo degli aggiornamenti.</string>
+    <string name="msg_update_not_available">Tutto a posto, non ci sono aggiornamenti disponibili.</string>
+    <string name="msg_new_update_downloaded">Aggiornamento pronto! È possibile proseguire con l\'installazione.</string>
+    <string name="install">Installa</string>
+    <string name="lock_scr_title">Verifica la tua identità</string>
+    <string name="lock_scr_subtitle">Accedi tramite dati biometrici</string>
+    <string name="lock_scr_desc">Accedi tramite impronta digitale o riconoscimento facciale
+        per proseguire. Questo passaggio è indispensabile per la tutela dei tuoi dati.
+    </string>
+    <string name="msg_enroll_biometric">Abilita l\'accesso con i dati biometrici nelle impostazioni.</string>
+    <string name="msg_favourites_updated">Preferiti aggiornati!</string>
+    <string name="dismiss">Ignora</string>
+    <string name="msg_auth_failed">Autenticazione non riuscita! Riprova o usa un metodo alternativo.</string>
+    <string name="msg_auth_error_s">Errore di autenticazione: %1$s</string>
+    <string name="restore">Ripristina</string>
+    <string name="empty_bin">Svuota il cestino</string>
+    <string name="files_d" documentation="returns e.g., 23 Files">%1$s File</string>
+    <string name="viewer_msg_no_wallpaper_app_found">Oops! Non è stata rilevata alcuna app per sfondi, installane una per proseguire.</string>
+    <string name="viewer_set_as">Imposta come</string>
+    <string name="today">Oggi</string>
+    <string name="trash_one_day_left">1 giorno rimanente</string>
+    <string name="trash_days_left_d">%1$s giorni rimanenti</string>
+    <string name="pref_app_theme_s"><b>Tema dell\'app (%1$s)</b>
+        <font color="grey" size="14">
+            \nPersonalizza il look dell\'app con le opzioni Notte, Giorno o Sistema.
+        </font>
+    </string>
+    <string-array name="pref_night_mode_entries">
+        <item>Scuro</item>
+        <item>Chiaro</item>
+        <item>Sync with System</item>
+    </string-array>
+    <string name="version">Versione</string>
+    <string name="version_info_s">Versione: %1$s</string>
+    <string name="about_us">Informazioni</string>
+    <string name="system">Sistema</string>
+    <string name="rate_us">Lasciaci una recensione</string>
+    <string name="share_app_label">Condividi con gli amici</string>
+    <string name="error">Errore</string>
+    <string-array name="pref_app_lock_options">
+        <item>Disabilitato</item>
+        <item>Instant</item>
+        <item>1 Min</item>
+        <item>30 Min</item>
+    </string-array>
+    <string name="none">Nessuno</string>
 </resources>

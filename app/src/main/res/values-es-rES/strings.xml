@@ -66,7 +66,6 @@
     <string name="use_as">Usar como</string>
     <string name="set_as_wallpaper">Establecer como fondo de pantalla</string>
     <string name="like">Favorito</string>
-    <string name="unlike">Quitar de Favoritos</string>
     <string name="details">Detalles</string>
     <string name="title">Título</string>
     <string name="path">Ruta</string>
@@ -96,6 +95,7 @@
     <string name="msg_auth_failed">¡Autenticación Fallida! Inténtelo de nuevo o utilice un método alternativo.</string>
     <string name="msg_auth_error_s">Error de autenticación: %1$s</string>
     <string name="restore">Restaurar</string>
+    <string name="empty_bin">Vaciar papelera</string>
     <string name="files_d" documentation="returns e.g., 23 Files">%1$s Archivos</string>
     <string name="viewer_msg_no_wallpaper_app_found">Ups! No se detectó ninguna aplicación de fondo de pantalla. Instale uno para continuar.</string>
     <string name="viewer_set_as">Establecer como</string>

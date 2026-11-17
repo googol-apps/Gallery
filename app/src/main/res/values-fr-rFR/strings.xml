@@ -15,6 +15,200 @@
        5. The snackbar message should have this structure: Title\n bold + experimental + message.
           The string resources should follow the above rules strictly
      -->
+    <string name="permission_scr_title">Permission d\'accès au stockage</string>
+    <string name="allow">Autoriser</string>
+    <string name="permission_scr_desc"><b>Gallerie</b> demande la permission d\'accèder
+        au stockage de l\'appareil pour afficher les
+        images et les vidéos.
+        <b>\n\nPour Android 14 et plus :</b>
+        <font color="grey">
+            \n  1. Veuillez sélectionner <b>Tout autoriser</b> dans la boîte de dialogue d\'autorisation pour que l\'appli fonctionne correctement.
+        </font>
+    </string>
+    <string name="photos">Photos</string>
+    <string name="settings">Paramètres</string>
+    <string name="folders">Dossiers</string>
+    <string name="loading">Chargement</string>
+    <string name="oops_empty">Oups, vide !!</string>
     <!--E.g., Facebook \n 306 Files - 24.42MB-->
+    <string name="folders_scr_folder_name_sds">%1$d Fichiers - %2$s</string>
+    <string name="size">Taille</string>
+    <string name="name">Nom</string>
+    <string name="recent">Récent</string>
+    <string name="dark">Sombre</string>
+    <string name="light">Clair</string>
+    <string name="sync_with_system">Synchroniser au système</string>
+    <string name="general">Général</string>
+    <string name="appearance">Apparance</string>
+    <string name="feedback">Retours</string>
+    <string name="about_gallery">À propos de Gallerie</string>
+    <string name="msg_unknown_error">Quelque chose s\'est mal passé. Une erreur inconnue a eu lieu.</string>
+    <string name="report">Envoyer un rapport d\'erreur</string>
+    <string name="timeline">Fil chronologique</string>
+    <string name="files_source_folder_title_s">123%1$s</string>
+    <string name="files_selected_d">%1$d en sélection</string>
+    <string name="select_all">Tout sélectionner</string>
+    <string name="bin">Corbeille</string>
+    <string name="recycle_bin">Bac de recyclage</string>
+    <string name="favourites">Favoris</string>
     <!--returns a string with multiplied x e.g., 1.3x-->
+    <string name="times_factor_x_f">%1$sx</string>
+    <string name="last_modified">Dernières modifications</string>
+    <string name="msg_error_sharing_files">Oups, quelque chose s\'est mal passé au moment de partager les fichiers. Merci de réessayer plus tard.</string>
+    <string name="msg_files_delete_unknown_error">Oups, quelque chose s\'est mal passé au moment de supprimer les fichiers. Merci de réessayer plus tard.</string>
+    <string name="msg_files_trash_unknown_error">Oups, quelque chose s\'est mal passé au moment de jeter les fichiers à la poubelle. Merci de réessayer plus tard.</string>
+    <string name="trash">Poubelle</string>
+    <string name="msg_files_restore_unknown_error">Oups, quelque chose s\'est mal passé au moment de restaurer les fichiers. Merci de réessayer plus tard.</string>
+    <string name="share">Partager</string>
+    <string name="edit">Modifier</string>
+    <string name="delete">Supprimer</string>
+    <string name="info">Info</string>
+    <string name="edit_in">Modifier avec</string>
+    <string name="use_as">Utiliser comme</string>
+    <string name="set_as_wallpaper">Utiliser comme fond d\'écran</string>
+    <string name="like">J\'aime</string>
+    <string name="details">Détails</string>
+    <string name="title">Titre</string>
+    <string name="path">Chemin</string>
+    <string name="metadata">Métadonnées</string>
+    <string name="msg_files_confirm_deletion"><b>Supprimer</b>
+        <font color="grey">\nVoulez-vous vraiment supprimer celà ? Vous ne pourrez pas le récupérer
+        </font>
+    </string>
+    <string name="msg_update_check_error">Oups ! Quelque chose s\'est mla passé au moment de vérifier les mises à jour.</string>
+    <string name="msg_update_not_available">RAS ! Aucune mise à jour disponible.</string>
+    <string name="msg_new_update_downloaded">Mise à jour prête ! L\'installation peut maintenant commencer.</string>
+    <string name="install">Installer</string>
+    <string name="lock_scr_title">Vérifiez votre identité</string>
+    <string name="lock_scr_subtitle">S\'authentifier avec les données biométriques</string>
+    <string name="lock_scr_desc">Authentifiez-vous avec votre empreinte digitale ou avec la reconnaissance faciale
+        pour continuer. Cette étape est cruciale pour protéger vos données.
+    </string>
+    <string name="msg_enroll_biometric">Autoriser l\'authentification biométrique dans les paramètres.</string>
+    <string name="msg_favourites_updated">Favoris mis à jour !</string>
+    <string name="msg_media_player_promotion"><b>Nouvelle appli de lecture de médias !</b>
+        <font color="gray">\n🎶 Venez voir notre nouveau <b>Media Player!</b> Appréciez vos musiques et vos
+           vidéos favorites sans effort. Essayez-la  ! 🎥
+        </font>
+    </string>
+    <string name="get">Installer</string>
+    <string name="dismiss">Ignorer</string>
+    <string name="msg_auth_failed">Authentification râtée ! Merci de réessayer plus tard ou d\'utiliser une méthode alternative.</string>
+    <string name="msg_auth_error_s">Erreur d\'authentification : %1$s</string>
+    <string name="restore">Restaurer</string>
+    <string name="empty_bin">Corbeille vide</string>
+    <string name="files_d" documentation="returns e.g., 23 Files">%1$s fichiers</string>
+    <string name="viewer_msg_no_wallpaper_app_found">Oups ! Aucune applli de fond d\'écran détectée. Installez-en une pour continuer.</string>
+    <string name="viewer_set_as">Utiliser comme</string>
+    <string name="today">Aujourd\'hui</string>
+    <string name="trash_one_day_left">1 jour restant</string>
+    <string name="trash_days_left_d">%1$s jours restants</string>
+    <string name="auth_confirm_biometric">Confirmer les données biométriques</string>
+    <string name="pref_app_theme_s"><b>Thème de l\'appli (%1$s)</b>
+        <font color="grey" size="14">
+            \nPersonnalisez l\'apparence de l\'appli avec les options de thème Jour, Nuit ou Système.
+        </font>
+    </string>
+    <string name="pref_immersive_view"><b>Vue immersive</b>
+        <font color="grey" size="14">
+            \nCache la barre de statu et la barre de navigation pour une experience plein écran sans distraction.
+        </font>
+    </string>
+    <string name="pref_enable_trash_can"><b>Bac de recyclage (Android 11+)</b>
+          <font color="grey" size="14">
+              \nActivez cette option pour bouger les fichiers supprimés dans le bac de recyclage plutôt que de les supprimer de manière permanente.
+          </font>
+    </string>
+    <string name="pref_grid_item_size_multiplier"><b>Multiplicateur de taille de grille</b>
+          <font color="grey" size="14">
+              \nAjustez l\'espace que prend chaque item dans la grille.
+          </font>
+    </string>
+    <string name="pref_colorization_strategy"><b>Colorisation Automatique <sup><font color="#ae1c27" size="10"><b>Beta</b></font></sup></b>
+         <font color="grey" size="14">
+             \nGénère un thème de manière dynamique basé sur les couleurs du media acuellement en train d\'être visionné.
+          </font>
+    </string>
+    <string name="pref_privacy_policy"><b>Politique de confidentialité</b>
+           <font color="grey" size="14">
+               \nCliquez ici pour voir la politique de confidentialité.
+          </font>
+    </string>
+    <string name="pref_live_gallery"><b>Galerie vivante</b>
+           <font color="grey" size="14">
+               \nActive les animations et la lecture automatique des vidéos dans la galerie.
+          </font></string>
+    <string name="pref_font_scale"><b>Taille des polices</b>
+         <font color="grey" size="14">
+            \nAjuste la taille des polices pour rendre le texte plus facile à lire. Choisissez une taille qui 
+             vous convient pour une meilleure lecture.
+        </font>
+    </string>
+    <string name="pref_transparent_system_bars"><b>Barres système</b>
+        <font color="grey" size="14">
+            \nActive la transparence des barres systèmes pour une experience bord-à-bord <b><i>\n(Android 6.0+)</i></b>
+        </font>
+    </string>
+    <string name="pref_report_an_issue"><b>Faire un rapport de bug</b>
+        <font color="grey" size="14">
+           \nContactez notre équipe du support pour aovir de l\'aide ou pour rapporter un erreur
+        </font>
+    </string>
+    <string-array name="pref_night_mode_entries">
+        <item>Sombre</item>
+        <item>Clair</item>
+        <item>Synchroniser avec le système</item>
+    </string-array>
+    <string name="version">Version</string>
+    <string name="version_info_s">Version : %1$s</string>
+    <string name="pref_secure_mode"><b>Mode sécurisé</b>
+        <font color="grey" size="14">
+           \nLe mode sécurisé obscurcit le contenu de l\'application dans le prévisualiseur d\'applis,
+             protégeant vote vie privée quand l\'application n\'est pas activement utilisée.
+        </font>
+    </string>
+    <string name="pref_app_lock_s"><b>Verrou d\'appli</b> (<small>%1$s</small>)<sup><font color="#ae1c27" size="10"><b> Beta</b></font></sup>
+          <font color="grey" size="14">
+              \nSécuriez Galerie avec une authentification biométrique.
+        </font>
+    </string>
+    <string name="pref_color_nav_bar"><b>Couleur de la NavBar</b><font color="grey" size="14">\nUtilise la couleur d\'accent dans la bare de navigation.
+        </font>
+    </string>
+    <string name="about_us">À propos de nous</string>
+    <string name="postfix_x_f">%1$.1fx</string>
+    <string name="system">Système</string>
+    <string name="join_the_beta">Rejoindre la Beta</string>
+    <string name="update_gallery">Mise à jour de Galerie</string>
+    <string name="rate_us">Notez-nous</string>
+    <string name="share_app_label">Partager avec mes amis</string>
+    <string name="pref_dynamic_colors"><b>Couleurs dynamiques</b>\n<font color="grey" size="14">Active l\'utilisation des couleurs dynamiques. Cette option n\'est disponible que sur <b>Android 12</b> ou plus.
+        </font>
+    </string>
+    <string name="error">Erreur</string>
+    <string-array name="pref_app_lock_options">
+        <item>Désactivé</item>
+        <item>Instantanné</item>
+        <item>1mn</item>
+        <item>30mn</item>
+    </string-array>
+    <string name="pref_scr_version_by_author_s">"v%1$s par <b><i>Zakir Sheikh</i></b>"</string>
+    <string name="buy_me_a_coffee">Payez-moi un café</string>
+    <string name="msg_support_gallery"><b>Galerie ne fait que démarrer - elle l\'appli ira en s\'améliorant.</b>
+    \nGalerie est open-source, dotée d\'un beau design, et prend rapidement de l\'ampleur. Vous pouvez m\'aider à continuer en :
+        \n1. 🌍 En parlant autour de vous
+        \n2. 🔧 Faisant des rapports de bugs
+        \n3. ☕ Me gardant motivé avec un petit geste, comme m\'acheter un café ou m\'offrir un l\'équivalent d\'un bon repas. 😊
+    </string>
+    <string name="viewer_scr_open_in_lens">Ouvrir avec Lens</string>
+    <string name="quick_share">Partage rapide</string>
+    <string name="msg_viewer_scr_no_g_lens">Installez l\'appli de Google pour utiliser Lens</string>
+    <string name="msg_files_quick_share_error">Installez l\'appli Quick Share pour utiliser cette fonctionnalité.</string>
+    <string name="none">Aucun</string>
+    <string name="properties">Propriétés</string>
+    <string name="pref_ambient_mode"><b>Mode Ambiance</b><font color="grey">\nAjoute des lumières immersives autour de la viosionneuse de médias pour une expérience plus cinématique.</font></string>
+    <string name="authenticate">S\'authentifier</string>
+    <string name="confirm">Confirmer</string>
+    <string name="msg_favourites_modify_d">Modifier %1$d items des Favoris ?</string>
+    <string name="add_your_language">Ajoutez votre langue</string>
 </resources>
