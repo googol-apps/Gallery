@@ -21,7 +21,9 @@
 package com.zs.gallery
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.hardware.biometrics.BiometricManager.Authenticators.BIOMETRIC_STRONG
 import android.hardware.biometrics.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import android.hardware.biometrics.BiometricPrompt
@@ -96,6 +98,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.koin.android.ext.android.inject
+import java.util.Locale
 import kotlin.time.Duration.Companion.days
 import kotlin.time.Duration.Companion.minutes
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen as configSplashScreen
@@ -237,6 +240,62 @@ class MainActivity : ComponentActivity(), SystemFacade, NavDestListener {
                 launchSingleTop = true
             }
         }
+    }
+
+    override fun restart(global: Boolean) {
+        // Get the launch intent for the app's main activity
+        val packageManager = packageManager
+        val intent = packageManager.getLaunchIntentForPackage(packageName)
+
+        // Ensure the intent is not null
+        if (intent == null) {
+            Log.e("AppRestart", "Unable to restart: Launch intent is null")
+            return
+        }
+
+        // Get the main component for the restart task
+        val componentName = intent.component
+        if (componentName == null) {
+            Log.e("AppRestart", "Unable to restart: Component name is null")
+            return
+        }
+        // Create the main restart intent and start the activity
+        val mainIntent = Intent.makeRestartActivityTask(componentName)
+        startActivity(mainIntent)
+        // Terminate the current process to complete the restart
+        if (global) Runtime.getRuntime().exit(0)
+        finish()
+    }
+
+    override fun attachBaseContext(newBase: Context?) {
+        // Read the user's saved language tag (e.g. "fr", "pt-BR"). Null means "follow system".
+        val tag = preferences[Settings.KEY_APP_LANGUAGE]
+
+        // Nothing to override: no saved language, or no base context to wrap.
+        // Fall back to the default behavior with the system language.
+        if (tag.isNullOrBlank() || newBase == null) {
+            super.attachBaseContext(newBase)
+            return
+        }
+
+        // Copy the current configuration so the original stays untouched.
+        val config = Configuration(newBase.resources.configuration)
+
+        // Build the locale from the saved tag.
+        val locale = Locale.forLanguageTag(tag)
+
+        // Some libraries (date/number formatting) read the JVM default
+        // instead of the context configuration, so keep both in sync.
+        Locale.setDefault(locale)
+
+        // Apply the locale to the configuration (this also updates layout direction).
+        config.setLocale(locale)
+        // Set layout direction explicitly to be safe for RTL languages (ar, ur, he).
+        config.setLayoutDirection(locale)
+
+        // Wrap the base context so every resource lookup uses the chosen language,
+        // then hand it to the superclass.
+        super.attachBaseContext(newBase.createConfigurationContext(config))
     }
 
     override fun onDestroy() {

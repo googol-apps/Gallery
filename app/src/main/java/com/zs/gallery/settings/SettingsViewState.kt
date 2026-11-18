@@ -108,7 +108,7 @@ private fun FontFamily(name: String): FontFamily {
  * Represents the state of the [Settings] screen.
  */
 interface SettingsViewState {
-    fun <S, O> set(key: Key<S, O>, value: O)
+    operator fun <S, O> set(key: Key<S, O>, value: O)
 }
 
 
@@ -228,7 +228,7 @@ object Settings {
     // 0 - represents 0ff state; 1 ambient
     val KEY_VISUAL_EFFECT_MODE =
         intPreferenceKey("${PREFIX}_visual_effect_mode", 0)
-
+    val KEY_APP_LANGUAGE = stringPreferenceKey("${PREFIX}_app_language")
 
     val DefaultFontFamily get() = FontFamily.Default
 

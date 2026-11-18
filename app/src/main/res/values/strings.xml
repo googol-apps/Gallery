@@ -239,4 +239,59 @@
         <font color='grey'>\n✨ Enjoy trusted updates, new features, and extra benefits by switching to the official Play Store version!</font>
     </string>
 
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <string-array name="supported_language_tags" translatable="false">
+        <item>en</item>
+        <item>af</item>
+        <item>ar</item>
+        <item>ca</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>de</item>
+        <item>el</item>
+        <item>es</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>gl</item>
+        <item>hu</item>
+        <item>it</item>
+        <item>he</item>
+        <item>ja</item>
+        <item>ko</item>
+        <item>nl</item>
+        <item>nb</item>
+        <item>pl</item>
+        <item>pt-BR</item>
+        <item>pt-PT</item>
+        <item>ro</item>
+        <item>ru</item>
+        <item>sr</item>
+        <item>sv</item>
+        <item>tr</item>
+        <item>uk</item>
+        <item>ur</item>
+        <item>vi</item>
+        <item>zh-CN</item>
+        <item>zh-TW</item>
+    </string-array>
+
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
+    <string name="pref_app_language_s"><b>App Language</b> (<small>%1$s</small>)\n
+        <font color="grey" size="14">
+            Select the app language. Some translations may be incomplete. Help improve them on Crowdin.
+        </font>
+    </string>
+
 </resources>

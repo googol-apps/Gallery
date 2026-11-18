@@ -36,6 +36,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.plus
+import androidx.compose.foundation.layout.requiredSizeIn
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBars
 import androidx.compose.foundation.layout.union
@@ -45,30 +47,32 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyListScope
 import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.selection.toggleable
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.KeyboardArrowDown
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.Recycling
 import androidx.compose.material.icons.filled.Security
 import androidx.compose.material.icons.filled.Settings
-import androidx.compose.material.icons.outlined.AutoAwesomeMotion
 import androidx.compose.material.icons.outlined.BlurOn
 import androidx.compose.material.icons.outlined.BugReport
 import androidx.compose.material.icons.outlined.Dashboard
 import androidx.compose.material.icons.outlined.DataObject
 import androidx.compose.material.icons.outlined.FormatSize
+import androidx.compose.material.icons.outlined.Language
 import androidx.compose.material.icons.outlined.NewReleases
 import androidx.compose.material.icons.outlined.PrivacyTip
 import androidx.compose.material.icons.outlined.RateReview
-import androidx.compose.material.icons.outlined.Share
-import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material.icons.outlined.Textsms
 import androidx.compose.material.icons.outlined.Translate
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -78,24 +82,25 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringArrayResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.layout.plus
+import com.zs.compose.foundation.Slot
 import com.zs.compose.foundation.textArrayResource
 import com.zs.compose.foundation.textResource
 import com.zs.compose.theme.AppTheme
 import com.zs.compose.theme.BaseListItem
 import com.zs.compose.theme.Button
 import com.zs.compose.theme.ButtonDefaults
+import com.zs.compose.theme.Checkbox
 import com.zs.compose.theme.Chip
 import com.zs.compose.theme.ChipDefaults
 import com.zs.compose.theme.Colors
 import com.zs.compose.theme.DropDownPreference
 import com.zs.compose.theme.FilledTonalButton
 import com.zs.compose.theme.Icon
-import com.zs.compose.theme.IconButton
 import com.zs.compose.theme.LocalWindowSize
 import com.zs.compose.theme.Preference
 import com.zs.compose.theme.SliderPreference
@@ -109,12 +114,14 @@ import com.zs.compose.theme.adaptive.SinglePaneStrategy
 import com.zs.compose.theme.adaptive.TwoPane
 import com.zs.compose.theme.adaptive.content
 import com.zs.compose.theme.appbar.AppBarDefaults
+import com.zs.compose.theme.menu.DropDownMenu
+import com.zs.compose.theme.menu.DropDownMenuItem
+import com.zs.compose.theme.menu.DropdownMenuItem
 import com.zs.compose.theme.minimumInteractiveComponentSize
 import com.zs.compose.theme.text.Header
 import com.zs.compose.theme.text.Label
 import com.zs.compose.theme.text.Text
 import com.zs.core.BuildConfig
-import com.zs.core.Intent
 import com.zs.core.billing.Paymaster
 import com.zs.gallery.R
 import com.zs.gallery.common.IAP_BUY_ME_COFFEE
@@ -126,6 +133,7 @@ import com.zs.gallery.common.compose.fadingEdge2
 import com.zs.gallery.common.compose.preference
 import com.zs.gallery.common.compose.rememberAcrylicSurface
 import com.zs.gallery.common.compose.source
+import java.util.Locale
 import androidx.compose.foundation.layout.PaddingValues as Padding
 import com.zs.gallery.common.compose.ContentPadding as CP
 
@@ -172,6 +180,56 @@ private val APP_LOCK_VALUES = arrayOf(-1, 0, 1, 30)
 private const val CONTENT_TYPE_HEADER = "header"
 private const val CONTENT_TYPE_ITEM = "item"
 
+
+/**
+ * Returns a human-readable label for a BCP 47 language tag.
+ *
+ * The language name is displayed in its own locale. For example:
+ * - "en" -> "English"
+ * - "fr" -> "Français"
+ * - "de" -> "Deutsch"
+ *
+ * Returns `null` when the supplied tag is `null` or blank.
+ *
+ * @param tag A BCP 47 language tag (for example, "en", "en-US", or "fr").
+ * @return The localized display name of the language, or `null` if the tag is
+ *   `null` or blank.
+ */
+private fun labelOf(tag: String?): String? {
+    if (tag.isNullOrBlank()) return null
+
+    val locale = Locale.forLanguageTag(tag)
+
+    // Get the language name in its own locale (e.g. "fr" -> "français")
+    // and capitalize the first character using locale-aware rules.
+    return locale.getDisplayName(locale)
+        .replaceFirstChar { char ->
+            char.titlecase(locale)
+        }
+}
+
+
+@Composable
+private inline fun Language(
+    label: CharSequence,
+    noinline onClick: () -> Unit,
+    checked: Boolean = false,
+    modifier: Modifier = Modifier
+) {
+    DropdownMenuItem (
+        onClick = onClick,
+        content = {
+            Checkbox(checked, null)
+            Label(
+                label,
+                fontWeight = if (checked) FontWeight.Bold else FontWeight.Normal,
+                modifier = Modifier.padding(start = CP.large)
+            )
+        },
+        modifier = modifier
+    )
+}
+
 /**
  * Represents the settings of General
  */
@@ -179,15 +237,61 @@ private const val CONTENT_TYPE_ITEM = "item"
 private inline fun LazyListScope.General(
     viewState: SettingsViewState,
 ) {
-    // Live Gallery
+    // AppLanguage
     item(contentType = CONTENT_TYPE_ITEM) {
-        val prefLiveGallery by preference(Settings.KEY_DYNAMIC_GALLERY)
-        SwitchPreference(
-            text = textResource(R.string.pref_live_gallery),
-            checked = prefLiveGallery,
-            icon = Icons.Outlined.AutoAwesomeMotion,
-            onCheckedChange = { viewState.set(Settings.KEY_DYNAMIC_GALLERY, it) },
-            modifier = Modifier.background(AppTheme.colors.tileBackgroundColor, TopTileShape)
+        val current by preference(Settings.KEY_APP_LANGUAGE)
+        val facade = LocalSystemFacade.current
+        val (expanded, onDismissRequest) = remember { mutableStateOf(false) }
+        Preference(
+            icon = Icons.Outlined.Language,
+            text = textResource(
+                R.string.pref_app_language_s,
+                labelOf(current) ?: stringResource(R.string.system)
+            ),
+            modifier = Modifier
+                .toggleable(
+                    expanded,
+                    onValueChange = onDismissRequest
+                )
+                .background(color = AppTheme.colors.tileBackgroundColor, TopTileShape),
+            widget = {
+                Slot(modifier = Modifier.minimumInteractiveComponentSize()) {
+                    Icon(
+                        Icons.Default.KeyboardArrowDown,
+                        contentDescription = null
+                    )
+                    // Languages
+                    DropDownMenu(
+                        expanded = expanded,
+                        onDismissRequest = { onDismissRequest(false) },
+                        modifier = Modifier.requiredSizeIn(maxHeight = 270.dp),
+                        scrollState = rememberScrollState(),
+                        content = {
+                            // Default language
+                            Language(
+                                label = stringResource(R.string.system),
+                                onClick = {
+                                    viewState[Settings.KEY_APP_LANGUAGE] = ""
+                                    facade.restart(false)
+                                },
+                                checked = current.isNullOrBlank()
+                            )
+                            // others
+                            val tags = stringArrayResource(R.array.supported_language_tags)
+                            for (tag in tags){
+                                Language(
+                                    label = labelOf(tag) ?: "",
+                                    checked = tag == current,
+                                    onClick = {
+                                        viewState[Settings.KEY_APP_LANGUAGE] = tag
+                                        facade.restart(false)
+                                    }
+                                )
+                            }
+                        },
+                    )
+                }
+            }
         )
     }
 
@@ -466,7 +570,12 @@ private fun Sponsor(modifier: Modifier = Modifier) {
                             if (BuildConfig.FLAVOR != BuildConfig.FLAVOR_COMMUNITY)
                                 facade.launchAppStore()
                             else
-                                facade.launch(Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/iZakirSheikh/Gallery")))
+                                facade.launch(
+                                    Intent(
+                                        Intent.ACTION_VIEW,
+                                        Uri.parse("https://github.com/iZakirSheikh/Gallery")
+                                    )
+                                )
                         },
                         colors = ButtonDefaults.filledTonalButtonColors(
                             backgroundColor = AppTheme.colors.background(
@@ -480,9 +589,14 @@ private fun Sponsor(modifier: Modifier = Modifier) {
                         stringResource(R.string.buy_me_a_coffee),
                         icon = Icons.Outlined.DataObject,
                         onClick = {
-                            when(BuildConfig.FLAVOR){
-                                BuildConfig.FLAVOR_COMMUNITY -> facade.launch(Intent(Intent.ACTION_VIEW,
-                                    Uri.parse("https://github.com/sponsors/iZakirSheikh")))
+                            when (BuildConfig.FLAVOR) {
+                                BuildConfig.FLAVOR_COMMUNITY -> facade.launch(
+                                    Intent(
+                                        Intent.ACTION_VIEW,
+                                        Uri.parse("https://github.com/sponsors/iZakirSheikh")
+                                    )
+                                )
+
                                 else -> facade.initiatePurchaseFlow(Paymaster.IAP_BUY_ME_COFFEE)
                             }
                         },
@@ -503,7 +617,10 @@ private fun ColumnScope.AboutUs() {
         subheading = {
             val ctx = LocalContext.current
             Label(
-                textResource(R.string.version_info_s, ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName ?: "")
+                textResource(
+                    R.string.version_info_s,
+                    ctx.packageManager.getPackageInfo(ctx.packageName, 0).versionName ?: ""
+                )
             )
         },
         footer = {
@@ -551,13 +668,13 @@ private fun ColumnScope.AboutUs() {
             backgroundColor = AppTheme.colors.background(1.dp),
             contentColor = AppTheme.colors.accent
         )
-       /* Chip(
-            content = { Label(textResource(R.string.rate_us)) },
-            leadingIcon = { Icon(Icons.Outlined.Star, null) },
-            onClick = facade::launchAppStore,
-            colors = colors,
-            shape = AppTheme.shapes.xSmall
-        )*/
+        /* Chip(
+             content = { Label(textResource(R.string.rate_us)) },
+             leadingIcon = { Icon(Icons.Outlined.Star, null) },
+             onClick = facade::launchAppStore,
+             colors = colors,
+             shape = AppTheme.shapes.xSmall
+         )*/
 
         Chip(
             content = { Label(textResource(R.string.add_your_language)) },
@@ -617,7 +734,7 @@ fun Settings(viewState: SettingsViewState) {
                         modifier = Modifier.scale(0.9f)
                     )
                     // Report Bugs on Github.
-                    TonalIconButton (
+                    TonalIconButton(
                         icon = Icons.Outlined.BugReport,
                         contentDescription = null,
                         onClick = { facade.launch(Settings.GitHubIssuesPage) },
@@ -665,7 +782,8 @@ fun Settings(viewState: SettingsViewState) {
                 // Immersive layouts typically have a bottom app bar, so extra padding improves aesthetics.
                 // Non-immersive layouts only need vertical padding.
                 contentPadding = Padding(
-                    horizontal = if (strategy is SinglePaneStrategy) CP.large else CP.medium, CP.normal
+                    horizontal = if (strategy is SinglePaneStrategy) CP.large else CP.medium,
+                    CP.normal
                 ) + (WindowInsets.content.union(WindowInsets.systemBars)
                     .union(inAppNavBarInsets).only(
                         WindowInsetsSides.Vertical
