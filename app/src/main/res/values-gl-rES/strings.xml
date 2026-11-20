@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="MissingTranslation">
+    <!--
+    Naming convention for string resources:
+     - The string can be styled following the rules of styling without CDATA, as the toolkit does not support CDATA.
+     - The string resources should be named as follows:
+       1. If the string is simple, like Delete, its name should be R.string.delete.
+       2. If the string contains complex text, the name should be in this format: screen_name_purpose_variables
+          (optional; if no variables, omit this). For example, timeline_scr_items_d
+       3. General message (snackbar) messages should be named as msg_add_to_playlist_error_s (optional).
+          The message can be styled as bold or experimental, like alpha superscript. The message
+          can have any length.
+       4. Snackbar messages that belong to a specific screen should be named as msg_screen_name_s
+          (optional). E.g., msg_preference_permission_s
+       5. The snackbar message should have this structure: Title\n bold + experimental + message.
+          The string resources should follow the above rules strictly
+     -->
+    <string name="permission_scr_title">Permiso de almacenaxe</string>
+    <string name="allow">Conceder</string>
+    <string name="permission_scr_desc"><b>Galería</b> precisa o permiso para acceder a
+        almacenaxe para mostrar imaxes e vídeos.
+        <b>\n\nEn Android 14 ou superiror:</b>
+        <font color="grey">
+            \n  1. Selecciona <b>Permitir todo</b> no cadro do permiso para que a app funcione corretamente.
+        </font>
+    </string>
+    <string name="photos">Fotos</string>
+    <string name="settings">Axustes</string>
+    <string name="folders">Cartafoles</string>
+    <string name="loading">Cargando</string>
+    <string name="oops_empty">Está baleiro!!</string>
+    <!--E.g., Facebook \n 306 Files - 24.42MB-->
+    <string name="folders_scr_folder_name_sds">%1$d ficheiros - %2$s</string>
+    <string name="size">Tamaño</string>
+    <string name="name">Nome</string>
+    <string name="recent">Recente</string>
+    <string name="dark">Escuro</string>
+    <string name="light">Claro</string>
+    <string name="sync_with_system">Usar o tema do sistema</string>
+    <string name="general">Xeral</string>
+    <string name="appearance">Aparencia</string>
+    <string name="feedback">Suxestións</string>
+    <string name="about_gallery">Sobre Galería</string>
+    <string name="msg_unknown_error">Algo fallou, aconteceu un erro descoñecido.</string>
+    <string name="report">Informar</string>
+    <string name="timeline">Cronoloxía</string>
+    <string name="files_source_folder_title_s">123%1$s</string>
+    <string name="files_selected_d">%1$d seleccionado</string>
+    <string name="select_all">Seleccionar todo</string>
+    <string name="bin">Papeleira</string>
+    <string name="recycle_bin">Papeleira de reciclaxe</string>
+    <string name="favourites">Favoritos</string>
+    <!--returns a string with multiplied x e.g., 1.3x-->
+    <string name="times_factor_x_f">%1$sx</string>
+    <string name="last_modified">Última modificación</string>
+    <string name="msg_error_sharing_files">Algo fallou ao compartir os ficheiros. Inténtao outra vez.</string>
+    <string name="msg_files_delete_unknown_error">Algo fallou ao eliminar os ficheiros. Inténtao outra vez.</string>
+    <string name="msg_files_trash_unknown_error">Algo fallou ao enviar ao lixo os ficheiros. Inténtao outra vez.</string>
+    <string name="trash">Lixo</string>
+    <string name="msg_files_restore_unknown_error">Algo fallou ao restablecer os ficheiros. Inténtao outra vez.</string>
+    <string name="share">Compartir</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="info">Info</string>
+    <string name="edit_in">Editar con</string>
+    <string name="use_as">Usar como</string>
+    <string name="set_as_wallpaper">Definir como fondo</string>
+    <string name="like">Favorecer</string>
+    <string name="details">Detalles</string>
+    <string name="title">Título</string>
+    <string name="path">Ruta </string>
+    <string name="metadata">Metadatos</string>
+    <string name="msg_files_confirm_deletion"><b>Eliminar</b>
+        <font color="grey">\nTes certeza de querer eliminar isto? Non poderás restablecelo
+        </font>
+    </string>
+    <string name="msg_update_check_error">Algo fallou ao comprobar as actualizacións.</string>
+    <string name="msg_update_not_available">Estás ao día! Non hai actualizacións.</string>
+    <string name="msg_new_update_downloaded">Actualización preparada! Xa podes realizar a instalación.</string>
+    <string name="install">Instalar</string>
+    <string name="lock_scr_title">Verifica a túa identidade</string>
+    <string name="lock_scr_subtitle">Autentícate con biometría</string>
+    <string name="lock_scr_desc">Autentícate coa túa impresión dactilar ou recoñecemento facial
+        para continuar. Este paso é moi importante para protexer os teus datos.
+    </string>
+    <string name="msg_enroll_biometric">Activar a autenticación biométrica nos axustes.</string>
+    <string name="msg_favourites_updated">Actualizáronse os favoritos!</string>
+    <string name="msg_media_player_promotion"><b>Nova app Reprodutor Multimedia!</b>
+        <font color="gray">\n🎶 Mira o noso <b>Reprodutor Multimedia!</b> Desfruta con facilidade das túas
+            cancións e vídeos favoritos. Probaa! 🎥
+        </font>
+    </string>
+    <string name="get">Obter</string>
+    <string name="dismiss">Rexeitar</string>
+    <string name="msg_auth_failed">Fallou a autenticación! Inténtao outra vez ou usa un método alternativo.</string>
+    <string name="msg_auth_error_s">Erro na autenticación: %1$s</string>
+    <string name="restore">Restablecer</string>
+    <string name="empty_bin">Baleirar o caldeiro</string>
+    <string name="files_d" documentation="returns e.g., 23 Files">%1$s ficheiros</string>
+    <string name="viewer_msg_no_wallpaper_app_found">Non se detectou unha app para o fondo de pantalla, instala unha.</string>
+    <string name="viewer_set_as">Establecer como</string>
+    <string name="today">Hoxe</string>
+    <string name="trash_one_day_left">Queda 1 día</string>
+    <string name="trash_days_left_d">Quedan %1$s días</string>
+    <string name="auth_confirm_biometric">Confirmar biometría</string>
+    <string name="pref_app_theme_s"><b>Decorado da app (%1$s)</b>
+        <font color="grey" size="14">
+            \nPersonaliza a aparencia coas opcións do decorado Claro, Escuro ou Seguir ao sistema.
+        </font>
+    </string>
+    <string name="pref_immersive_view"><b>Vista inmersiva</b>
+        <font color="grey" size="14">
+            \nOculta a barra de estado e navegación para unha experiencia libre de distracións.
+        </font>
+    </string>
+    <string name="pref_enable_trash_can"><b>Caldeiro para reciclaxe (Android 11+)</b>
+          <font color="grey" size="14">
+              \nActiva a opción para mover os ficheiros eliminados ao caldeiro para reciclar e non os elimines directamente.
+          </font>
+    </string>
+    <string name="pref_grid_item_size_multiplier"><b>Tamaño elementos da grella</b>
+          <font color="grey" size="14">
+              \nAxusta o espazo entre cada elemento na disposición en grella.
+          </font>
+    </string>
+    <string name="pref_colorization_strategy"><b>Cor automática <sup><font color="#ae1c27" size="10"><b>Beta</b></font></sup></b>
+         <font color="grey" size="14">
+             \nCrear de xeito dinámico un decorado en función das cores da portada do multimedia en reprodución.
+          </font>
+    </string>
+    <string name="pref_privacy_policy"><b>Directiva de privacidade</b>
+           <font color="grey" size="14">
+               \nPreme aquí para ver a directiva de privacidade.
+          </font>
+    </string>
+    <string name="pref_live_gallery"><b>Galería dinámica</b>
+           <font color="grey" size="14">
+               \nActiva para a galería as animacións e reprodución automática do vídeo.
+          </font></string>
+    <string name="pref_font_scale"><b>Tamaño da letra</b>
+         <font color="grey" size="14">
+            \nConfigura o tamaño dos textos para unha lectura cómoda. Elixe a escala que mellor se adapta ás túas
+             preferencias e facilitar a lectura.
+        </font>
+    </string>
+    <string name="pref_transparent_system_bars"><b>Barras do sistema</b>
+        <font color="grey" size="14">
+            \nActiva as barras do sistema transparentes para unha experiencia de bordo a bordo <b><i>\n(Android 6.0+)</i></b>
+        </font>
+    </string>
+    <string name="pref_report_an_issue"><b>Informar dun problema</b>
+        <font color="grey" size="14">
+           \nContacta co noso equipo de axuda para obter asistencia ou informar sobre problemas
+        </font>
+    </string>
+    <string-array name="pref_night_mode_entries">
+        <item>Escuro</item>
+        <item>Claro</item>
+        <item>Seguir ao sistema</item>
+    </string-array>
+    <string name="version">Versión</string>
+    <string name="version_info_s">Versión: %1$s</string>
+    <string name="pref_secure_mode"><b>Modo seguro</b>
+        <font color="grey" size="14">
+           \nNo modo seguro o contido aparece agochado na vista previa, protexendo a túa privacidade
+            cando a app non está en uso activo.
+        </font>
+    </string>
+    <string name="pref_app_lock_s"><b>Bloqueo da app</b> (<small>%1$s</small>)<sup><font color="#ae1c27" size="10"><b> Beta</b></font></sup>
+          <font color="grey" size="14">
+              \nProtexe a Galería con autenticación biométrica.
+        </font>
+    </string>
+    <string name="pref_color_nav_bar"><b>Cor da NavBar</b><font color="grey" size="14">\nUsar a cor destacada do sistema na barra de navegación.
+        </font>
+    </string>
+    <string name="about_us">Sobre nós</string>
+    <string name="postfix_x_f">%1$.1fx</string>
+    <string name="system">Sistema</string>
+    <string name="join_the_beta">Unirse á Beta</string>
+    <string name="update_gallery">Actualizar Galería</string>
+    <string name="rate_us">Valóranos</string>
+    <string name="share_app_label">Compartir coas amizades</string>
+    <string name="pref_dynamic_colors"><b>Cores dinámicas</b>\n<font color="grey" size="14">Control para usar as cores dinámicas. Esta característica só está dispoñible para  <b>Android 12</b> ou superior.
+        </font>
+    </string>
+    <string name="error">Erro</string>
+    <string-array name="pref_app_lock_options">
+        <item>Desactivado</item>
+        <item>Instantáneo</item>
+        <item>1 Min</item>
+        <item>30 Min</item>
+    </string-array>
+    <string name="pref_scr_version_by_author_s">"v%1$s por <b><i>Zakir Sheikh</i></b>"</string>
+    <string name="buy_me_a_coffee">Convídame a un café</string>
+    <string name="msg_support_gallery"><b>Galería está nos seus inicios — e mellorando a cada paso.</b>
+    \nGalería é de código aberto, ben deseñada e medra moi rápido. Podes axudarme
+        \n1. 🌍 falando desta app
+        \n2. 🔧 informando de fallos
+        \n3. ☕ manténdome motivado con pequenos xestos como convidándome a un café ou a unha comida. 😊
+    </string>
+    <string name="viewer_scr_open_in_lens">Abrir en Lens</string>
+    <string name="quick_share">Quick Share</string>
+    <string name="msg_viewer_scr_no_g_lens">Usa a app de Google para usar Lens</string>
+    <string name="msg_files_quick_share_error">Instala a app Quick Share para usar esta ferramenta.</string>
+    <string name="none">Ningunha</string>
+    <string name="properties">Propiedades</string>
+    <string name="pref_ambient_mode"><b>Modo ambiente</b><font color="grey">\nEngade unha luz inmersiva arredor do multimedia para unha experiencia máis dinámica.</font></string>
+    <string name="authenticate">Autenticar</string>
+    <string name="confirm">Confirmar</string>
+    <string name="msg_favourites_modify_d">Modificar %1$d elementos en Favoritos?</string>
+    <string name="add_your_language">Engade o teu idioma</string>
+</resources>

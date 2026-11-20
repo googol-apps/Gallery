@@ -94,8 +94,8 @@ private fun MediaPlayer(uri: Uri) {
         controller,
         Modifier.fillMaxSize(),
         Color.Black,
-        true,
-        true
+        keepScreenOn = true,
+        useController = true
     )
     val facade = LocalSystemFacade.current
     // Use DisposableEffect to manage resources that need to be set up and torn down.
