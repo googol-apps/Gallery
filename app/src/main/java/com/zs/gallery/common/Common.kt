@@ -215,14 +215,60 @@ val Context.isInstalledFromPlayStore: Boolean
         false
     }
 
+// FIXME - This fixes issues #44 the issue casuing app to show get from playstore message on startup
 /**
- * Checks if the device can resolve an intent to open the Play Store.
- * This indirectly confirms whether Play Store (com.android.vending) is installed.
+ * Returns true only if a *genuine* Google Play Store is available on this device.
+ *
+ * Why this is not just a "package exists" check:
+ * microG (used by LineageOS-for-microG, /e/OS, etc.) ships a stub called FakeStore that
+ * registers itself as `com.android.vending`, and a replacement for Play Services (GmsCore)
+ * that registers as `com.google.android.gms`. Both look like the real thing to
+ * PackageManager, so a plain package/intent check passes on those devices and we would
+ * wrongly nudge users who deliberately chose a FOSS setup to install from Google Play.
+ *
+ * This is best-effort heuristics, not a security guarantee. Failure modes are safe:
+ * any doubt returns false, which means the nudge is simply not shown.
  */
 fun Context.isPlayStoreAvailable(): Boolean {
+    val pm = packageManager
+    val playStorePkg = "com.android.vending"        // Google Play Store
+    val gmsPkg = "com.google.android.gms"           // Google Play Services (or microG GmsCore)
+
+    // 1. The Play Store package must exist, and must not be microG's FakeStore.
+    //    NameNotFoundException also happens on Android 11+ if package visibility hides it
+    //    (no <queries> entry); in that case we return false, so no nudge is shown.
+    val storeInfo = try {
+        pm.getApplicationInfo(playStorePkg, 0)
+    } catch (e: PackageManager.NameNotFoundException) {
+        return false
+    }
+    val storeLabel = pm.getApplicationLabel(storeInfo).toString()
+    if (storeLabel.contains("FakeStore", ignoreCase = true) ||
+        storeLabel.contains("Companion", ignoreCase = true) // newer microG name for FakeStore
+    ) return false
+
+    // 2. Play Services must exist and must not be microG's GmsCore.
+    //    The real Play Store cannot work without real Play Services, and microG reuses the
+    //    GMS package name, so this is a second, independent way to detect microG.
+    //    NOTE: the metadata key and labels are from memory; log them on a microG device
+    //    to confirm at least one matches.
+    try {
+        val gmsInfo = pm.getApplicationInfo(gmsPkg, PackageManager.GET_META_DATA)
+        val gmsLabel = pm.getApplicationLabel(gmsInfo).toString()
+        if (gmsInfo.metaData?.containsKey("org.microg.gms.version") == true ||
+            gmsLabel.contains("microG", ignoreCase = true)
+        ) return false
+    } catch (e: PackageManager.NameNotFoundException) {
+        // No Play Services at all: a Play Store here would be a stub or non-functional.
+        return false
+    }
+
+    // 3. The Play Store must actually be able to handle market:// links.
+    //    Setting the package explicitly ensures we test the Play Store itself and not
+    //    some other app that handles market:// (e.g. Aurora, Amazon Appstore).
     val playStoreIntent = Intent(Intent.ACTION_VIEW) {
         data = Uri.parse("market://details?id=$packageName")
-        setPackage("com.android.vending") // Target Play Store explicitly
+        setPackage(playStorePkg)
     }
-    return playStoreIntent.resolveActivity(packageManager) != null
+    return playStoreIntent.resolveActivity(pm) != null
 }
