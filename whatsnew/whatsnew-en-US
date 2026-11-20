@@ -1,3 +1,4 @@
-• Seamless theme switching between light and dark modes without app restarts.
-• Fixed app lock resets during system theme changes for an uninterrupted experience.
-• Improved stability, performance gains, and general bug fixes.
+• Introduced an in-app language selector for seamless locale switching.
+• Added full translation support for Galician, French, Italian, and Russian.
+• Refined media viewer crossfade effects and system bar hiding behavior.
+• Fixed background timestamp preservation to prevent unexpected app locking and improved reliability on custom ROMs.

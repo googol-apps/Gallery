@@ -4,8 +4,11 @@
     <string name="what_s_new_latest" translatable="false">
         <b>What\'s new</b>
         <font color='grey'>
-            \n🌟 <b>Theme Switching</b>: Seamless transition between light and dark modes without restarting the app or resetting lock timers.
-            \n🌟 <b>Language Consistency</b>: Ensured the app name displays consistently across all device language settings.
+            \n <b>In-App Language Selection</b>: Easily switch your preferred app language directly from the settings screen.
+            \n <b>New Language Support</b>: Added full translations for French, Italian, Russian, and Galician.
+            \n <b>Media Viewer Enhancements</b>: Enjoy a smoother media viewing experience with polished crossfade backgrounds and improved display controls.
+            \n <b>Custom ROM Compatibility</b>: Improved app detection and stability on custom ROMs and FOSS setups by preventing false store availability alerts.
+            \n <b>Reliable Background Lock</b>: Fixed an issue where the app would unexpectedly lock when returning after activity recreation.
         </font>
     </string>
 </resources>
