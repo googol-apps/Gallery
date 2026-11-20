@@ -215,7 +215,6 @@ val Context.isInstalledFromPlayStore: Boolean
         false
     }
 
-// FIXME - This fixes issues #44 the issue casuing app to show get from playstore message on startup
 /**
  * Returns true only if a *genuine* Google Play Store is available on this device.
  *

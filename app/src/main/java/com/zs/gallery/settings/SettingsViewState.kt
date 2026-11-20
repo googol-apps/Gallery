@@ -32,18 +32,6 @@ import com.zs.core.BuildConfig
 import com.zs.gallery.R
 import com.zs.gallery.common.NightMode
 import com.zs.gallery.common.Route
-import com.zs.gallery.settings.Settings.KEY_APP_LOCK_TIME_OUT
-import com.zs.gallery.settings.Settings.KEY_DYNAMIC_GALLERY
-import com.zs.gallery.settings.Settings.KEY_FAVOURITE_FILES
-import com.zs.gallery.settings.Settings.KEY_FONT_SCALE
-import com.zs.gallery.settings.Settings.KEY_GRID_ITEM_SIZE_MULTIPLIER
-import com.zs.gallery.settings.Settings.KEY_IMMERSIVE_VIEW
-import com.zs.gallery.settings.Settings.KEY_LAUNCH_COUNTER
-import com.zs.gallery.settings.Settings.KEY_NIGHT_MODE
-import com.zs.gallery.settings.Settings.KEY_SECURE_MODE
-import com.zs.gallery.settings.Settings.KEY_TRANSPARENT_SYSTEM_BARS
-import com.zs.gallery.settings.Settings.KEY_TRASH_CAN_ENABLED
-import com.zs.gallery.settings.Settings.STANDARD_TILE_SIZE
 import com.zs.preferences.Key
 import com.zs.preferences.StringSaver
 import com.zs.preferences.booleanPreferenceKey
@@ -193,8 +181,7 @@ object Settings {
             PREFIX + "_transparent_system_bars",
             defaultValue = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q
         )
-    val KEY_IMMERSIVE_VIEW =
-        booleanPreferenceKey(PREFIX + "_immersive_view", defaultValue = false)
+
     val KEY_FAVOURITE_FILES =
         stringPreferenceKey(
             "${PREFIX}_favourite_files",
@@ -211,6 +198,7 @@ object Settings {
                 }
             }
         )
+
     val KEY_SECURE_MODE =
         booleanPreferenceKey(PREFIX + "_secure_gallery", defaultValue = false)
     val KEY_LAUNCH_COUNTER =

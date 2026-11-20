@@ -478,28 +478,12 @@ private inline fun LazyListScope.Appearence(
     // Hide/Show SystemBars for Immersive View
     item(contentType = CONTENT_TYPE_ITEM) {
         // Whether System Bars are hidden for immersive view or not.
-        val immersiveView by preference(Settings.KEY_IMMERSIVE_VIEW)
-        SwitchPreference(
-            checked = immersiveView,
-            text = textResource(R.string.pref_immersive_view),
-            onCheckedChange = { should: Boolean ->
-                viewState.set(Settings.KEY_IMMERSIVE_VIEW, should)
-            },
-            modifier = Modifier
-                .background(AppTheme.colors.tileBackgroundColor, CentreTileShape)
-        )
-    }
-
-    //
-    // Hide/Show SystemBars for Immersive View
-    item(contentType = CONTENT_TYPE_ITEM) {
-        // Whether System Bars are hidden for immersive view or not.
         val mode by preference(Settings.KEY_VISUAL_EFFECT_MODE)
         SwitchPreference(
             checked = mode == 1,
             text = textResource(R.string.pref_ambient_mode),
             onCheckedChange = { should: Boolean ->
-                viewState.set(Settings.KEY_VISUAL_EFFECT_MODE, if (should) 1 else 0)
+                viewState[Settings.KEY_VISUAL_EFFECT_MODE] = if (should) 1 else 0
             },
             icon = Icons.Outlined.BlurOn,
             modifier = Modifier

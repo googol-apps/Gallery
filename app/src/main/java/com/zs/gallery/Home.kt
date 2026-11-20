@@ -26,7 +26,6 @@ import android.os.Build
 import android.provider.MediaStore
 import android.util.Log
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.animation.scaleIn
@@ -46,11 +45,10 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Camera
 import androidx.compose.material.icons.filled.FolderCopy
 import androidx.compose.material.icons.filled.PhotoLibrary
-import androidx.compose.material.icons.filled.Settings
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.NonRestartableComposable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.State
 import androidx.compose.runtime.derivedStateOf
 import androidx.compose.runtime.getValue
@@ -70,6 +68,7 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavGraphBuilder
@@ -82,7 +81,6 @@ import com.zs.compose.foundation.ClaretViolet
 import com.zs.compose.foundation.OrientRed
 import com.zs.compose.foundation.SignalWhite
 import com.zs.compose.foundation.UmbraGrey
-import com.zs.compose.foundation.background
 import com.zs.compose.foundation.textResource
 import com.zs.compose.theme.AppTheme
 import com.zs.compose.theme.Colors
@@ -634,12 +632,11 @@ fun Home(
             )
         }
     )
-
-    // Observe the state of the IMMERSE_VIEW setting
-    // Observe the state of the IMMERSE_VIEW setting
-    val immersiveView by activity.observeAsState(Settings.KEY_IMMERSIVE_VIEW)
+    // Removed immersive view ; that was not reqired for geeral app se.
+    // fixed isse #44 casig sowing reated essage wen fake playstore was istalled like icroG.
+    // Fixed issue #36 causing system bars to be visible wen app was playig videos.
     val transparentSystemBars by activity.observeAsState(Settings.KEY_TRANSPARENT_SYSTEM_BARS)
-    LaunchedEffect(immersiveView, style, isDark, transparentSystemBars) {
+    SideEffect ( style, isDark, transparentSystemBars) {
         // Get the WindowInsetsController for managing system bars
         val window = activity.window
         val controller = WindowCompat.getInsetsController(window, window.decorView)
@@ -648,11 +645,16 @@ fun Home(
         val visible = when (style.flagSystemBarVisibility) {
             WindowStyle.FLAG_SYSTEM_BARS_HIDDEN -> false  // Hide system bars
             WindowStyle.FLAG_SYSTEM_BARS_VISIBLE -> true  // Show system bars
-            else -> !immersiveView  // If not explicitly set, use the immersiveView setting
+            else -> true
         }
         // Apply the visibility setting to the system bars
-        if (!visible) controller.hide(WindowInsetsCompat.Type.systemBars())
-        else controller.show(WindowInsetsCompat.Type.systemBars())
+        if (visible){
+            controller.show(WindowInsetsCompat.Type.systemBars())
+            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_DEFAULT
+        }else {
+            controller.hide(WindowInsetsCompat.Type.systemBars())
+            controller.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
+        }
         // Determine the appearance of system bars (dark or light) based on the current style settings
         controller.isAppearanceLightSystemBars = when (style.flagSystemBarAppearance) {
             WindowStyle.FLAG_SYSTEM_BARS_APPEARANCE_DARK -> false  // Use dark system bars appearance
@@ -661,7 +663,7 @@ fun Home(
         }
         // Configure the system bars background color based on the current style settings
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM)
-            return@LaunchedEffect // No supported from here.
+            return@SideEffect // No supported from here.
         window.apply {
             val color = when (style.flagSystemBarBackground) {
                 WindowStyle.FLAG_SYSTEM_BARS_BG_TRANSLUCENT -> Color(0x20000000).toArgb()  // Translucent background
