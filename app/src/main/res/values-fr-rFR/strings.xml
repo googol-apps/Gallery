@@ -109,11 +109,6 @@
             \nPersonnalisez l\'apparence de l\'appli avec les options de thème Jour, Nuit ou Système.
         </font>
     </string>
-    <string name="pref_immersive_view"><b>Vue immersive</b>
-        <font color="grey" size="14">
-            \nCache la barre de statu et la barre de navigation pour une experience plein écran sans distraction.
-        </font>
-    </string>
     <string name="pref_enable_trash_can"><b>Bac de recyclage (Android 11+)</b>
           <font color="grey" size="14">
               \nActivez cette option pour bouger les fichiers supprimés dans le bac de recyclage plutôt que de les supprimer de manière permanente.
@@ -211,4 +206,18 @@
     <string name="confirm">Confirmer</string>
     <string name="msg_favourites_modify_d">Modifier %1$d items des Favoris ?</string>
     <string name="add_your_language">Ajoutez votre langue</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

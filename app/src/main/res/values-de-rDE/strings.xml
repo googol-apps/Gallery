@@ -107,11 +107,6 @@
             \nPasse das Aussehen der App mit Nacht-, Tages- oder System-Theme-Optionen an.
         </font>
     </string>
-    <string name="pref_immersive_view"><b>Immersive Ansicht</b>
-        <font color="grey" size="14">
-            \nStatusleiste und Navigationsleiste ausblenden für ablenkungsfreies Vollbilderlebnis.
-        </font>
-    </string>
     <string name="pref_enable_trash_can"><b>Papierkorb (Android 11+)</b>
           <font color="grey" size="14">
               \nAktivieren, um gelöschte Dateien in den Papierkorb zu verschieben, anstatt sie endgültig zu löschen.
@@ -209,4 +204,18 @@
     <string name="confirm">Bestätigen</string>
     <string name="msg_favourites_modify_d">%1$d Elemente in Favoriten ändern?</string>
     <string name="add_your_language">Deine Sprache hinzufügen</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

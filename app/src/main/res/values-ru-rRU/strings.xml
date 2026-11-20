@@ -104,11 +104,6 @@
             \nНастройте внешний вид приложения, выбрав тему \"Ночь\", \"День\" или \"Системная\".
         </font>
     </string>
-    <string name="pref_immersive_view"><b>Режим полного погружения</b>
-        <font color="grey" size="14">
-            \nСкройте строку состояния и панель навигации для полноэкранного режима.
-        </font>
-    </string>
     <string name="pref_enable_trash_can"><b>Корзина (Android 11+)</b>
           <font color="grey" size="14">
               \nВключить возможность перемещения удаленных файлов в Корзину вместо их полного удаления.
@@ -163,4 +158,18 @@
     <string name="confirm">Подтвердить</string>
     <string name="msg_favourites_modify_d">Изменить %1$d элементов в Избранном?</string>
     <string name="add_your_language">Добавьте Ваш Язык</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

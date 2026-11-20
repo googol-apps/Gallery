@@ -118,4 +118,18 @@
         <item>30 Min</item>
     </string-array>
     <string name="none">Nessuno</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

@@ -108,11 +108,6 @@
     \n自定义应用外观，支持夜间、日间或系统主题选项。
 </font>
     </string>
-    <string name="pref_immersive_view"><b>沉浸式视图</b> 
-<font color="grey" size="14">
-    \n隐藏状态栏和导航栏，带来无干扰的全屏体验。
-</font>
-    </string>
     <string name="pref_enable_trash_can"><b>回收站 (Android 11+)</b>
           <font color="grey" size="14">
               \n启用将已删除的文件移动到回收站而不是永久删除。
@@ -205,4 +200,18 @@
     <string name="pref_ambient_mode"><b>环境模式</b><font color="grey">\n为媒体查看器添加沉浸式灯光效果，带来更具电影感的体验。</font>
 </string>
     <string name="authenticate">验证</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

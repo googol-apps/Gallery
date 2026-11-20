@@ -109,11 +109,6 @@
             \nНалаштуйте вигляд застосунку за допомогою темної, світлої або системної тем.
         </font>
     </string>
-    <string name="pref_immersive_view"><b>На весь екран</b>
-        <font color="grey" size="14">
-            \nПриховати рядок стану та панель навігації, щоби не відволікатися.
-        </font>
-    </string>
     <string name="pref_enable_trash_can"><b>Смітник <small>(Android 11+)</small></b>
           <font color="grey" size="14">
               \nУвімкніть, щоби перемістити видалені файли до смітника замість остаточного видалення.
@@ -212,4 +207,18 @@
     <string name="confirm">Підтвердити</string>
     <string name="msg_favourites_modify_d">Змінити %1$d елементів в Улюбленому?</string>
     <string name="add_your_language">Додати свою мову</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

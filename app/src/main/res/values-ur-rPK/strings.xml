@@ -105,10 +105,6 @@
             \nایپ کے نظارے کو رات، دن یا سسٹم تھیم کے اختیارات سے اپنے مطابق بنائیں۔
         </font>
     </string>
-    <string name="pref_immersive_view"><b>ایمرسیو ویو</b>
-        <font color="grey" size="14">
-            \nپوری اسکرین کے تجربے کے لیے اسٹیٹس بار اور نیویگیشن بار چھپائیں۔
-        </font>    </string>
     <string name="pref_enable_trash_can"><b>ری سائیکل بن (Android 11+)</b>
           <font color="grey" size="14">
               \nحذف شدہ فائلوں کو مستقل طور پر ڈیلیٹ کرنے کی بجائے ری سائیکل بن میں منتقل کریں۔
@@ -199,4 +195,18 @@
     <string name="confirm">تصدیق کریں</string>
     <string name="msg_favourites_modify_d">پسندیدہ میں %1$d آئٹمز کو تبدیل کریں؟</string>
     <string name="add_your_language">اپنی زبان شامل کریں</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

@@ -104,7 +104,6 @@
     <string name="trash_days_left_d">%1$s dni pozostało</string>
     <string name="auth_confirm_biometric">Potwierdź biometrią</string>
     <string name="pref_app_theme_s"><b>Motyw aplikacji %1$s </b>          <font color="grey" size="14">              \nDostosuj wygląd aplikacji, wybierając motyw Nocny, Dzienny lub Systemowy.           </font>     </string>
-    <string name="pref_immersive_view"><b>Tryb pełnoekranowy </b>          <font color="grey" size="14">              \nUkryj pasek stanu i pasek nawigacji, aby uzyskać pełnoekranowe środowisko bez rozpraszaczy.    </font>     </string>
     <string name="pref_enable_trash_can"><b>Kosz (Android 11+)</b>
           <font color="grey" size="14">
               \nWłącz, aby przenosić usunięte pliki do Kosza, zamiast usuwać je na stałe.
@@ -203,4 +202,18 @@
     <string name="confirm">Potwierdź</string>
     <string name="msg_favourites_modify_d">Zmienić %1$d element w Ulubionych?</string>
     <string name="add_your_language">Dodaj swój język</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>

@@ -105,11 +105,6 @@
             \nUygulamanın görünümünü Karanlık, Aydınlık veya Sistem teması seçenekleriyle özelleştirin.
         </font>
     </string>
-    <string name="pref_immersive_view"><b>Tam Ekran Görünümü</b>
-        <font color="grey" size="14">
-            \nDikkat dağıtmayan, tam ekran bir deneyim için durum çubuğunu ve gezinme çubuğunu gizleyin.
-        </font>
-    </string>
     <string name="pref_enable_trash_can"><b>Geri Dönüşüm Kutusu (Android 11+)</b>
           <font color="grey" size="14">
               \nSilinen dosyaları kalıcı olarak silmek yerine Geri Dönüşüm Kutusu\'na taşımak için etkinleştirin.
@@ -206,4 +201,18 @@
     <string name="confirm">Onayla</string>
     <string name="msg_favourites_modify_d">Favorilerdeki %1$d öğe değiştirilsin mi?</string>
     <string name="add_your_language">Kendi Dilini Ekle</string>
+    <!--
+        This list contains all language tags supported by the app, including language files that may
+        currently be empty or incomplete.
+        TODO - Any new language file must also be added to this list.
+        -->
+    <!--
+    App Language preference.
+
+    Allows users to select the application's display language.
+
+    Translation note:
+    Some strings and resources may be incomplete, untranslated, or empty in certain languages.
+    Community contributions are welcome via Crowdin to help improve localisation quality.
+    -->
 </resources>
